@@ -44,7 +44,7 @@ var a = Math.pow(2,8) + (3*5*17) + 6;
 ```
 
 ### Function and Variable naming
-Changing the naming of functions and variables is an obvious technique, but can quickly become overwhelming for a person to memorize. This is not a new technique, but an important one to note.
+This is well known, and used extensivly when minifying code, but changing the naming of functions and variables is effective.
 
 Simple example:
 ```javascript
@@ -75,7 +75,7 @@ var b = a(115,15) + a(101,489) + (99,18) + a(114,82910) + a(101,48) + a(114,46);
 ```
 
 ### Parameter padding
-When creating functions, you may choose to add extra bogus parameters even if not needed. I prefer to use the max number of needed parameters on all functions. The useful parameter index can be randomized.
+When creating functions, you may add extra fake parameters. All of your functions can take the same number of parameters, and what paramater values are actually used in the function can be randomized.
 
 Simple example:
 ```javascript
@@ -89,7 +89,7 @@ Becomes:
 ```javascript
 var a = b(12,3,1,4,13,3,15,2);
 function b(ba,bb,bc,bd,be,bf,bg){
-	return bc * 100;
+	return bc * bg;
 }
 ```
 
@@ -107,8 +107,8 @@ All of the above techniques are fairly simple to observe the intent of the progr
 While a few levels of nesting can obscure the intent of code, step by step debugging can quickly 
 
 ### Extra Functions
-Extraneous functions can also be added to obscure important functions. All of the above techniques can be compounded as long as desired.
+Extraneous functions can also be added to obscure important functions. All of the above techniques can be compounded.
 
-Nested functions can also contribute an ineffective value to any of the above to obscure even further. Imagine 10 nested functions that compute (0+0).
+Nested functions can also return ineffective values, imagine 10 nested functions that eventually return (0+0).
 
-However, by analyzing functions one can find the number of dependencies (functions, sub-functions, global arrays). The greater number of dependencies can indicate the importance of any function. So, red herring functions should have similar level of obfuscation to the function(s) you wish to obscure.
+However, by analyzing functions one can find the number of dependencies (functions, sub-functions, global arrays). The greater number of dependencies can indicate the importance of any function. So, fake functions should employ similar levels of obfuscation to the function(s) you wish to obscure.
